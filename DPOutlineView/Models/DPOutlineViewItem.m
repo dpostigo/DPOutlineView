@@ -3,7 +3,6 @@
 // Copyright (c) 2014 Elastic Creative. All rights reserved.
 //
 
-#import <DPOutlineView/DPTableCellView.h>
 #import "DPOutlineViewItem.h"
 #import "DPOutlineViewSection.h"
 
@@ -20,37 +19,45 @@
 @synthesize identifier;
 @synthesize section;
 
+@synthesize objectValue;
+
 - (instancetype) initWithTitle: (NSString *) aTitle {
     return [self initWithTitle: aTitle image: nil];
 }
 
 
+- (instancetype) initWithTitle: (NSString *) aTitle objectValue: (id) anObjectValue {
+    return [self initWithTitle: aTitle subtitle: nil image: nil identifier: nil objectValue: anObjectValue];
+}
+
+
 - (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage {
-    return [self initWithTitle: aTitle subtitle: aSubtitle image: anImage identifier: nil];
+    return [self initWithTitle: aTitle subtitle: aSubtitle image: anImage identifier: nil objectValue: nil ];
 }
 
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage {
-    return [self initWithTitle: aTitle subtitle: nil image: anImage identifier: nil];
+    return [self initWithTitle: aTitle subtitle: nil image: anImage identifier: nil objectValue: nil ];
 }
 
 - (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier {
-    return [self initWithTitle: aTitle subtitle: nil image: nil identifier: anIdentifier];
+    return [self initWithTitle: aTitle subtitle: nil image: nil identifier: anIdentifier objectValue: nil ];
 }
 
-- (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier {
+- (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier objectValue: (id) anObjectValue {
     self = [super init];
     if (self) {
         title = aTitle;
         subtitle = aSubtitle;
         image = anImage;
         identifier = anIdentifier;
+        objectValue = anObjectValue;
     }
 
     return self;
 }
 
 - (instancetype) initWithTitle: (NSString *) aTitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier {
-    return [self initWithTitle: aTitle subtitle: nil image: anImage identifier: anIdentifier];
+    return [self initWithTitle: aTitle subtitle: nil image: anImage identifier: anIdentifier objectValue: nil ];
 }
 
 - (NSUInteger) itemIndex {

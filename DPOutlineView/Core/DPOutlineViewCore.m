@@ -46,9 +46,9 @@
 
 - (void) awakeCells {
     cellStorage = [[NSObject alloc] init];
-    NSView *ret = nil;
-    ret = [self makeViewWithIdentifier: @"HeaderCell" owner: self.cellStorage];
-    ret = [self makeViewWithIdentifier: @"DataCell" owner: self.cellStorage];
+
+ [self makeViewWithIdentifier: @"HeaderCell" owner: self.cellStorage];
+  [self makeViewWithIdentifier: @"DataCell" owner: self.cellStorage];
 }
 
 

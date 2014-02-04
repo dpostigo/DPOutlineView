@@ -277,7 +277,20 @@
 }
 
 
+- (CGFloat) outlineView: (NSOutlineView *) outlineView heightOfRowByItem: (id) item {
+    CGFloat ret = 0;
+    ret = [item isKindOfClass: [DPOutlineViewSection class]] ? [self heightForSection: item] : [self heightForItem: item];
+    return ret == 0 ? self.rowHeight : ret;
+}
 
+
+- (CGFloat) heightForSection: (DPOutlineViewSection *) section {
+    return [self returnFloat: @selector(heightForSection:) delegate: self.outlineDelegate object: section];
+}
+
+- (CGFloat) heightForItem: (DPOutlineViewItem *) item {
+    return [self returnFloat: @selector(heightForItem:) delegate: self.outlineDelegate object: item];
+}
 
 
 #pragma mark Row views
@@ -394,6 +407,11 @@
 }
 
 
+#pragma mark Buttons
+
+- (void) buttonClicked: (NSButton *) button inItem: (NSTableCellView *) item {
+    [self callSelector: @selector(buttonClicked:cellView:) object: button object: item];
+}
 
 
 #pragma mark Sections

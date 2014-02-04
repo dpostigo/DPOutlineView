@@ -17,7 +17,7 @@
         self.wantsLayer = YES;
 
         CALayer *layer = self.layer;
-        layer.backgroundColor = [NSColor whiteColor].CGColor;
+        layer.backgroundColor = [NSColor clearColor].CGColor;
 
     }
 
@@ -48,6 +48,21 @@
         [button setAlternateImage: [NSImage imageNamed: NSImageNameGoRightTemplate]];
         //        [(NSButton *) subview setAlternateImage: [NSImage imageNamed: @"disclosure-open"]];
     }
+}
+
+
+- (void) drawBackgroundInRect: (NSRect) dirtyRect {
+//    [super drawBackgroundInRect: dirtyRect];
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+}
+
+- (void) drawSelectionInRect: (NSRect) dirtyRect {
+    [super drawSelectionInRect: dirtyRect];
+}
+
+- (void) drawSeparatorInRect: (NSRect) dirtyRect {
+    [super drawSeparatorInRect: dirtyRect];
 }
 
 

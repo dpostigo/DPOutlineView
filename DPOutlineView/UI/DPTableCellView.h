@@ -9,9 +9,11 @@
 
     IBOutlet NSTextField *textLabel;
     IBOutlet NSTextField *detailTextLabel;
+    IBOutlet NSButton *button;
 
 }
 
 @property(nonatomic, strong) NSTextField *detailTextLabel;
 @property(nonatomic, strong) NSTextField *textLabel;
+@property(nonatomic, strong) NSButton *button;
 @end

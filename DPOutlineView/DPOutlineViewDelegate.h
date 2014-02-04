@@ -33,4 +33,9 @@
 - (void) outlineViewItemWillExpand: (NSNotification *) notification;
 - (void) outlineViewItemDidExpand: (NSNotification *) notification;
 
+
+- (void) buttonClicked: (NSButton *) button cellView: (NSTableCellView *) cellView;
+
+- (CGFloat) heightForSection: (DPOutlineViewSection *) section;
+- (CGFloat) heightForItem: (DPOutlineViewItem *) item;
 @end

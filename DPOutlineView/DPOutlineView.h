@@ -24,4 +24,5 @@
 
 - (CGFloat) outlineHeight;
 
+- (void) buttonClicked: (NSButton *) button inItem: (NSTableCellView *) item;
 @end
