@@ -26,6 +26,9 @@
 - (void) willDisplayTableCellView: (DPTableCellView *) cellView forItem: (DPOutlineViewItem *) item;
 - (void) didSelectItem: (DPOutlineViewItem *) item;
 
+
+- (void) shouldDeleteItem: (DPOutlineViewItem *) item;
+
 - (void) outlineViewDidReload;
 
 - (void) outlineViewItemWillCollapse: (NSNotification *) notification;

@@ -12,6 +12,21 @@
     return [self itemAtRow: 0];
 }
 
+- (DPOutlineViewItem *) itemForTitle: (NSString *) title {
+    DPOutlineViewItem *ret = nil;
+    for (DPOutlineViewSection *section in self.sections) {
+        for (int j = 0; j < [section itemCount]; j++) {
+            DPOutlineViewItem *item = [section itemAtIndex: j];
+            if ([item.title isEqualToString: title]) {
+                ret = item;
+                break;
+            }
+        }
+
+    }
+    return ret;
+}
+
 
 - (DPOutlineViewItem *) itemForIdentifier: (NSString *) identifier {
     DPOutlineViewItem *ret = nil;

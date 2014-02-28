@@ -7,5 +7,6 @@
 
 @interface DPOutlineView (Selection)
 
+- (void) selectItemByTitle: (NSString *) title;
 - (void) selectItemByIdentifier: (NSString *) identifier;
 @end

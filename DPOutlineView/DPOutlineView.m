@@ -438,4 +438,16 @@
 }
 
 
+- (void) delete: (id) sender {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    if (self.selectedRow) {
+        id item = [self itemAtRow: self.selectedRow];
+        if ([item isKindOfClass: [DPOutlineViewItem class]]) {
+            [self callSelector: @selector(shouldDeleteItem:) object: item];
+        }
+    }
+}
+
+
 @end

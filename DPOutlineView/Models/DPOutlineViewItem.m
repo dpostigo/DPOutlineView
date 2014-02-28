@@ -25,6 +25,10 @@
     return [self initWithTitle: aTitle image: nil];
 }
 
+- (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier objectValue: (id) anObjectValue {
+    return [self initWithTitle: aTitle subtitle: nil image: nil identifier: identifier objectValue: anObjectValue];
+}
+
 
 - (instancetype) initWithTitle: (NSString *) aTitle objectValue: (id) anObjectValue {
     return [self initWithTitle: aTitle subtitle: nil image: nil identifier: nil objectValue: anObjectValue];

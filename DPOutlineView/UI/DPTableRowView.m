@@ -44,16 +44,16 @@
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString: @"Hello"];
         button.attributedStringValue = string;
 
-        [button setImage: [NSImage imageNamed: NSImageNameGoRightTemplate]];
-        [button setAlternateImage: [NSImage imageNamed: NSImageNameGoRightTemplate]];
+        //        [button setImage: [NSImage imageNamed: NSImageNameGoRightTemplate]];
+        //        [button setAlternateImage: [NSImage imageNamed: NSImageNameGoRightTemplate]];
         //        [(NSButton *) subview setAlternateImage: [NSImage imageNamed: @"disclosure-open"]];
     }
 }
 
 
 - (void) drawBackgroundInRect: (NSRect) dirtyRect {
-//    [super drawBackgroundInRect: dirtyRect];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    [super drawBackgroundInRect: dirtyRect];
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
 
 }
 

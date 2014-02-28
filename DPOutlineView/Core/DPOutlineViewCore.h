@@ -15,7 +15,7 @@
     BOOL autoExpands;
     BOOL dragsItems;
     BOOL dragsSections;
-    NSObject *cellStorage;
+    NSMutableDictionary *cellStorage;
     CGFloat expandedHeight;
     id <DPOutlineViewDelegate> outlineDelegate;
     CGFloat unexpandedHeight;
@@ -23,6 +23,7 @@
     __strong Class rowViewClass;
 
     NSArray *draggingItems;
+    BOOL isCellsAwake;
 }
 
 @property(nonatomic, strong) id <DPOutlineViewDelegate> outlineDelegate;
@@ -33,7 +34,7 @@
 @property(nonatomic, strong) NSMutableArray *sections;
 
 
-@property(nonatomic, strong) NSObject *cellStorage;
+@property(nonatomic, strong) NSMutableDictionary *cellStorage;
 @property(nonatomic, strong) Class rowViewClass;
 
 
@@ -41,6 +42,7 @@
 @property(nonatomic) BOOL dragsSections;
 @property(nonatomic, strong) NSArray *draggingItems;
 @property(nonatomic) BOOL isAwake;
+@property(nonatomic) BOOL isCellsAwake;
 - (void) clearSections;
 - (NSUInteger) sectionCount;
 

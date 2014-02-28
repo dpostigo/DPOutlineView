@@ -10,5 +10,6 @@
 @interface DPOutlineView (ItemUtils)
 
 - (id) firstItem;
+- (DPOutlineViewItem *) itemForTitle: (NSString *) title;
 - (DPOutlineViewItem *) itemForIdentifier: (NSString *) identifier;
 @end

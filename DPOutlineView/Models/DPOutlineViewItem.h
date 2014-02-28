@@ -29,6 +29,7 @@
 - (void) removeFromSection;
 - (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage identifier: (NSString *) anIdentifier objectValue: (id) anObjectValue;
 - (instancetype) initWithTitle: (NSString *) aTitle subtitle: (NSString *) aSubtitle image: (NSImage *) anImage;
+- (instancetype) initWithTitle: (NSString *) aTitle identifier: (NSString *) anIdentifier objectValue: (id) anObjectValue;
 
 
 @end

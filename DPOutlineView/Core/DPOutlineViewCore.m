@@ -7,6 +7,7 @@
 #import "DPOutlineViewSection.h"
 #import "DPOutlineViewItem.h"
 #import "NSOutlineView+Insertion.h"
+#import "NSView+DPFrameUtils.h"
 
 @implementation DPOutlineViewCore {
     NSMutableArray *sections;
@@ -28,6 +29,7 @@
 
 @synthesize draggingItems;
 @synthesize isAwake;
+@synthesize isCellsAwake;
 #define LOCAL_REORDER_PASTEBOARD_TYPE @"MyCustomOutlineViewPboardType"
 //#define LOCAL_REORDER_PASTEBOARD_TYPE @"MyCustomOutlineViewPboardType"
 
@@ -36,7 +38,11 @@
 
     isAwake = YES;
     autoExpands = YES;
-    [self awakeCells];
+
+    if (!isCellsAwake) {
+        [self awakeCells];
+        isCellsAwake = YES;
+    }
 
     super.dataSource = self;
     super.delegate = self;
@@ -45,10 +51,11 @@
 
 
 - (void) awakeCells {
-    cellStorage = [[NSObject alloc] init];
+    cellStorage = [[NSMutableDictionary alloc] init];
 
- [self makeViewWithIdentifier: @"HeaderCell" owner: self.cellStorage];
-  [self makeViewWithIdentifier: @"DataCell" owner: self.cellStorage];
+    [self makeViewWithIdentifier: @"HeaderCell" owner: self.cellStorage];
+    NSView *dataCellPrototype = [self makeViewWithIdentifier: @"DataCell" owner: self.cellStorage];
+    [cellStorage setObject: dataCellPrototype forKey: @"dataCell"];
 }
 
 
