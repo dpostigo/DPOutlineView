@@ -6,7 +6,6 @@
 #import <Foundation/Foundation.h>
 #import "DPOutlineViewCore.h"
 
-
 @class DPOutlineViewSection;
 
 @interface DPOutlineView : DPOutlineViewCore <NSOutlineViewDelegate, NSOutlineViewDataSource> {

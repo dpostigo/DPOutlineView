@@ -1,18 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "DPOutlineView"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "DPOutlineView."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
   s.author       = { "Dani Postigo" => "dani@firstperson.is" }
-
-
   s.source       = { :git => "https://github.com/dpostigo/DPOutlineView.git", :tag => s.version.to_s }
   s.platform     = :osx, '10.8'
-  s.dependency     'DPKit'
-  s.dependency     'NSView-DPFrameUtils'
   s.frameworks   = 'Foundation', 'QuartzCore'
 
+  s.dependency     'DPKit'
+  s.dependency     'NSView-DPFrameUtils'
 
   s.requires_arc = true
 
@@ -25,6 +23,7 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'UI' do |ui|
+    ui.dependency 'DPOutlineView/Core'
     ui.source_files = 'DPOutlineView/UI/*.{h,m}'
   end
 
