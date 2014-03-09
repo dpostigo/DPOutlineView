@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPOutlineView"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "DPOutlineView."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.platform     = :osx, '10.8'
   s.frameworks   = 'Foundation', 'QuartzCore'
 
-  s.dependency     'DPKit'
+  s.dependency     'DPKit-Utils'
   s.dependency     'NSView-DPFrameUtils'
 
   s.requires_arc = true
